@@ -12,12 +12,10 @@ public class Main {
     private static final String MONEY_PATTERN = "^(\\$)?(\\d{1,3}(\\,\\d{3})*|(\\d+))(\\.\\d{2})?$";
 
     public static void main(String[] args) {
-        Scanner s = null;
         Double money;
         int dollars;
         int cents;
-        try {
-            s = new Scanner(System.in);
+        try (Scanner s = new Scanner(System.in)) {
             System.out.print("input amount of change to make (e.g. 4.50): ");
             while (s.hasNext()) {
                 String operator = s.next();
@@ -49,10 +47,6 @@ public class Main {
                     System.out.println("invalid input, amount must be a number and follow pattern $x.yy");
                 }
                 System.out.print("\ninput amount of change to make (e.g. 4.50): ");
-            }
-        } finally {
-            if (s != null) {
-                s.close();
             }
         }
     }
