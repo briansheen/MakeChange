@@ -31,10 +31,9 @@ public class Main {
                         money = Double.valueOf(operator.replaceAll("[^\\d.]+", ""));
                         dollars = (int) (money / 1);
                         cents = Integer.valueOf(String.format("%.0f", ((money - dollars) * 100)));
-                        int mod;
                         int numQuarters = (cents / QUARTER) + (dollars * 4);
                         System.out.println(numQuarters + " quarters");
-                        mod = cents % QUARTER;
+                        int mod = cents % QUARTER;
                         int numDimes = (mod / DIME);
                         System.out.println(numDimes + " dimes");
                         mod = mod % DIME;
