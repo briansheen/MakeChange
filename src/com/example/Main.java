@@ -13,12 +13,11 @@ public class Main {
 
     public static void main(String[] args) {
         Set<Integer> coins = new HashSet<>();
-        coins.add(25);
-        coins.add(10);
-        coins.add(5);
-        coins.add(1);
+        coins.add(QUARTER);
+        coins.add(DIME);
+        coins.add(NICKEL);
+        coins.add(PENNY);
         try (Scanner s = new Scanner(System.in)) {
-            System.out.print("input amount of change to make (e.g. 4.50): ");
             System.out.println("Welcome to the Change Making Machine!");
             System.out.print("Would you like to make change with standard U.S. coins (standard) or with U.S. coins + up to two custom coin denominations (custom)? : ");
             while (s.hasNext()) {
