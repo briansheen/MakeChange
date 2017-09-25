@@ -85,6 +85,8 @@ public class Main {
                         while (s.hasNext()) {
                             operator = s.nextLine();
                             if (operator.equals("back")) {
+                                coins.remove(coin1);
+                                coins.remove(coin2);
                                 break;
                             }
                             getCustomChange(operator, coins, coin1, coin2);
@@ -129,7 +131,9 @@ public class Main {
             int total = Integer.valueOf(String.format("%.0f", ((money - 0) * 100)));
             List<Integer> values = new ArrayList<>();
             for (Integer i : coins) {
-                values.add(i);
+                if(i!=0) {
+                    values.add(i);
+                }
             }
             Collections.sort(values);
             Collections.reverse(values);
