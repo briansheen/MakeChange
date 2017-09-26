@@ -19,13 +19,12 @@ public class Main {
         coins.add(PENNY);
         try (Scanner s = new Scanner(System.in)) {
             System.out.println("Welcome to the Change Making Machine!");
-            System.out.print("Would you like to make change with standard U.S. coins (standard) or with U.S. coins + up to two custom coin denominations (custom)? : ");
+            System.out.print("Would you like to make change with standard U.S. coins or with U.S. coins + up to two custom coin denominations? (standard/custom): ");
             while (s.hasNext()) {
                 String operator = s.nextLine();
                 if (operator.equals("quit")) {
                     break;
-                }
-                if (operator.equals("standard")) {
+                } else if (operator.equals("standard")) {
                     System.out.print("input amount of change to make (e.g. 4.50): ");
                     while (s.hasNext()) {
                         operator = s.nextLine();
@@ -35,8 +34,7 @@ public class Main {
                         getChange(operator);
                         System.out.print("\ninput amount of change to make (e.g. 4.50): ");
                     }
-                }
-                if (operator.equals("custom")) {
+                } else if (operator.equals("custom")) {
                     Integer coin1 = null;
                     Integer coin2 = null;
                     System.out.print("input first custom coin denomination in cents (e.g. 7): ");
@@ -92,8 +90,10 @@ public class Main {
                             System.out.print("\ninput amount of change to make (e.g. 4.50): ");
                         }
                     }
+                } else {
+                    System.out.println("invalid input, please choose 'standard' or 'custom'");
                 }
-                System.out.print("\nWould you like to make change with standard U.S. coins (standard) or with U.S. coins + up to two custom coin denominations (custom)? : ");
+                System.out.print("\nWould you like to make change with standard U.S. coins or with U.S. coins + up to two custom coin denominations? (standard/custom): ");
             }
         }
     }
